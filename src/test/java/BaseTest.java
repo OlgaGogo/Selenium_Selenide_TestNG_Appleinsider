@@ -1,14 +1,13 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 abstract public class BaseTest {
 
     public void SetUp(){
-        WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
         Configuration.headless = false;
     }
 
